@@ -23,6 +23,13 @@ public @interface RegisterForReflection {
     boolean fields() default true;
 
     /**
+     * If nested classes/interfaces should be registered
+     *
+     * This is useful when it's necessary to register inner (especially private) classes for Reflection.
+     */
+    boolean includeNested() default false;
+
+    /**
      * Alternative classes that should actually be registered for reflection instead of the current class.
      *
      * This allows for classes in 3rd party libraries to be registered without modification or writing an
